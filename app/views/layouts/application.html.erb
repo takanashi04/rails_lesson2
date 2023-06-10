@@ -10,6 +10,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <header>
+    <h1><%= link_to "民泊マッチング", root_path %></h1>
+    <p><%= link_to "ログイン", 'users/sign_in' %></p>
+    <p><%= link_to "新規登録", 'users/sign_in' %></p>
+  </header>
+
   <body>
     <%= yield %>
   </body>
