@@ -13,7 +13,11 @@
   <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
       <%= link_to "宿泊予約アプリ", root_path %>
-      <%# ログイン、新規登録を２回連続して押すとエラーになる %>
+      <% if current_user.present? %>
+        <p>こんにちは、<%= current_user.name %>さん!</p>
+      <% else %>
+        <p>こんにちは、ゲストさん!</p>
+      <% end %>
       <nav>
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "ホーム", root_path %></li>
