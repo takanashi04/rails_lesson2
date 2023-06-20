@@ -1,0 +1,27 @@
+<h1>施設登録</h1>
+<%= form_with model:@room do |f| %>
+  <div>
+    <%= f.label :room_name %><br />
+    <%= f.text_field :room_name %>
+  </div>
+  
+  <div>
+    <%= f.label :room_content %><br />
+    <%= f.text_area :room_content %>
+  </div>
+
+  <div>
+    <%= f.label :room_price %><br />
+    <%= f.number_field :room_price %>
+  </div>
+
+  <div>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+
+  <div>
+    <%= f.submit "登録完了する" %>
+    <%= link_to "キャンセル", root_path %>
+  </div>
+<% end %>
