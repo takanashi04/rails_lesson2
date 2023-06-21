@@ -6,8 +6,8 @@ class RoomsController < ApplicationController
   def new
     @rooms = Room.new
   end
-
   def create
+    binding.pry
     @rooms = Room.new(params.require(:room).permit(:room_name, :room_content, :room_price, :address))
     if @rooms.save
       flash[:notice] = "施設を新規登録しました"
@@ -18,6 +18,7 @@ class RoomsController < ApplicationController
   end
   
   def show
+    @rooms = Room.find(params[:id])
   end
 
   def edit
