@@ -21,6 +21,11 @@
   </div>
 
   <div>
+    <%= f.label :avatar_path, "画像アップロード" %><br />
+    <%= f.file_field :avatar_path, id: :user_avatar_path %>
+  </div>
+
+  <div>
     <%= f.submit "登録完了する" %>
     <%= link_to "キャンセル", root_path %>
   </div>
