@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'reservations/index'
   root 'home#index'
   devise_for :users
   post '/rooms/new', to:'rooms#create'

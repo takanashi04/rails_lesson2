@@ -1,0 +1,29 @@
+<h2>予約一覧</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>画像</th>
+      <th>施設名</th>
+      <th>詳細</th>
+      <th>合計料金</th>
+      <th>チェックイン日</th>
+      <th>チェックアウト日</th>
+      <th>人数</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reservations.each do |reservation|%>
+      <tr>
+        <td><%=  %></td>
+        <td><%=  %></td>
+        <td><%=  %></td>
+        <td><%=  %></td>
+        <td><%= reservation.check_in_date %></td>
+        <td><%= reservation.check_out_date %></td>
+        <td><%= reservation.number_of_person %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
