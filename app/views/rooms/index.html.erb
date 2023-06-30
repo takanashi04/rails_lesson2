@@ -6,9 +6,10 @@
       <th>id</th>
       <th>画像</th>
       <th>施設名</th>
-      <th>詳細</th>
+      <th>紹介文</th>
       <th>値段</th>
       <th>住所</th>
+      <th>link</th>
     </tr>
   </thead>
 
@@ -18,9 +19,10 @@
         <td><%= room.id %></td>
         <td><%= image_tag('default-image.png') %></td>
         <td><%= room.name %></td>
-        <td><%= room.content%></td>
-        <td><%= room.price%></td>
-        <td><%= room.address%></td>
+        <td><%= room.content %></td>
+        <td><%= room.price %></td>
+        <td><%= room.address %></td>
+        <td><%= link_to "詳細情報へ", room %></td>
       </tr>
     <% end %>
   </tbody>
