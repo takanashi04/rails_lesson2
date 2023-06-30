@@ -5,4 +5,6 @@ class Room < ApplicationRecord
   validates :address, presence: true
 
   mount_uploader :avatar_path, AvatarUploader
+
+  has_many :reservations
 end
