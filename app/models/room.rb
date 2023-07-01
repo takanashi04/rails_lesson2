@@ -6,5 +6,5 @@ class Room < ApplicationRecord
 
   mount_uploader :avatar_path, AvatarUploader
 
-  has_many :reservations
+  # has_many :reservations
 end
