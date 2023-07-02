@@ -10,7 +10,7 @@ class ReservationsController < ApplicationController
   def create
     @reservation = Reservation.new(reservation_params)
     if @reservation.save
-      redirect_to @reservation, notice: "予約が完了しました！"
+      redirect_to :reservations, notice: "予約が完了しました！"
     else
       render :new
     end
@@ -29,6 +29,7 @@ class ReservationsController < ApplicationController
   def destroy
   end
 
+  private
   def reservation_params
     params.require(:reservation).permit(:check_in_date, :check_out_date, :number_of_person)
   end
