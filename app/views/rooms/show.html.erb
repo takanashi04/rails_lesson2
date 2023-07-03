@@ -12,7 +12,7 @@
 
 <div>
 
-  <%= form_with(model: @reservation, url: reservations_path) do |f| %>
+  <%= form_with model: @reservationd do |f| %>
 
     <%= f.label :check_in_date, "チェックイン日" %>
     <%= f.date_field :check_in_date, required: true%>
@@ -27,4 +27,5 @@
     <%= link_to "旅館一覧へ", rooms_path %>
 
   <% end %>
+
 </div>
