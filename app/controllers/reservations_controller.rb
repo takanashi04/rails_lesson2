@@ -10,9 +10,10 @@ class ReservationsController < ApplicationController
   def create
     binding.pry
     @reservation = Reservation.new(reservation_params)
+
     if @reservation.save
       flash[:notice] = "予約が完了しました！"
-      redirect_to :reservations 
+      redirect_to @reservation
     else
       render :new
     end
@@ -31,12 +32,13 @@ class ReservationsController < ApplicationController
   def destroy
   end
 
+  private
+
   def reservation_params
-    binding.pry
     params.require(:reservation).permit(
-      :check_in_date,
-      :check_out_date,
-      :number_of_person
+    :check_in_date,
+    :check_out_date,
+    :number_of_person
     )
   end
 end

@@ -8,7 +8,6 @@ class RoomsController < ApplicationController
   end
   def create
     @room = Room.new(room_params)
-    binding.pry
     if @room.save
       flash[:notice] = "施設を新規登録しました"
       redirect_to :rooms
@@ -30,6 +29,8 @@ class RoomsController < ApplicationController
   
   def destroy
   end
+
+  private
 
   def room_params
     params.require(:room).permit(
