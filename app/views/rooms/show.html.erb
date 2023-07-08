@@ -10,18 +10,18 @@
   </tr>
 </table>
 
-<%= form_with model: @reservation, url: reservations_path, method: :post do |f| %>
+<%= form_with model: @reservation, method: :post, url: reservations_path do |f| %>
 
-  <%= f.label :check_in_date, "チェックイン日" %>
-  <%= f.date_field :check_in_date %>
+  <p><%= f.label :check_in_date, "チェックイン日" %></p>
+  <p><%= f.date_field :check_in_date %></p>
 
-  <%= f.label :check_out_date, "チェックアウト日" %>
-  <%= f.date_field :check_out_date %>
+  <p><%= f.label :check_out_date, "チェックアウト日" %></p>
+  <p><%= f.date_field :check_out_date %></p>
 
-  <%= f.label :number_of_person, "人数" %>
-  <%= f.number_field :number_of_person %>
+  <p><%= f.label :number_of_person, "人数" %></p>
+  <p><%= f.number_field :number_of_person %></p>
 
-  <%= f.submit "確認画面へ" %>
+  <p><%= f.submit "確認画面へ" %></p>
 
 <% end %>
 

@@ -1,9 +1,7 @@
-<h1>宿泊予約確認</h1>
+<h1>予約確認</h1>
 
 <% @reservations.each do |reservation| %>
-  <%= room.id %>
-  <%= room.name %>
-  <%= room.content %>
-  <%= room.price %>
-  <%= room.address %>
+  <p><%= reservation.check_in_date %></p>
+  <p><%= reservation.check_in_date %></p>
+  <p><%= reservation.number_of_person %></p>
 <% end %>
