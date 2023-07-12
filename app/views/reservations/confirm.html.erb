@@ -1,7 +1,10 @@
 <h1>予約確認</h1>
 
-<% @reservations.each do |reservation| %>
+<%= form_with model: @reservation, method: :post do |reservation| %>
+  <p>チェックイン</p>
   <p><%= reservation.check_in_date %></p>
-  <p><%= reservation.check_in_date %></p>
+  <p>チェックアウト</p>
+  <p><%= reservation.check_out_date %></p>
+  <p>人数</p>
   <p><%= reservation.number_of_person %></p>
 <% end %>

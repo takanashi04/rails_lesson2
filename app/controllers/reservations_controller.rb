@@ -14,7 +14,7 @@ class ReservationsController < ApplicationController
       flash[:notice] = "予約が完了しました！"
       redirect_to reservations_path
     else
-      render "new"
+      render 'new'
     end
   end
 
@@ -32,6 +32,9 @@ class ReservationsController < ApplicationController
   end
 
   def confirm
+    binding.pry
+    @reservation = Reservation.new(reservation_params)
+    render reservations_confirm_path
   end
 
   private

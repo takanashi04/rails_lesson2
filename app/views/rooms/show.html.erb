@@ -10,7 +10,7 @@
   </tr>
 </table>
 
-<%= form_with model: @reservation, method: :post, url: reservations_path do |f| %>
+<%= form_with model: @reservation, method: :post, url: reservations_confirm_path do |f| %>
 
   <p><%= f.label :check_in_date, "チェックイン日" %></p>
   <p><%= f.date_field :check_in_date %></p>
