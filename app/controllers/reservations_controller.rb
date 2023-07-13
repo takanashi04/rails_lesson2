@@ -12,11 +12,11 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
 
     if @reservation.save
-      # binding.pry
+      binding.pry
       flash[:notice] = "予約が完了しました！"
       redirect_to reservations_path
     else
-      # binding.pry
+      binding.pry
       render 'confirm'
     end
   end
