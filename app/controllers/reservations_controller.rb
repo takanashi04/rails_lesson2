@@ -32,7 +32,7 @@ class ReservationsController < ApplicationController
   end
 
   def confirm
-    binding.pry
+    # binding.pry
     @reservation = Reservation.new(reservation_params)
     render reservations_confirm_path
   end
