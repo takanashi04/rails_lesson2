@@ -1,10 +1,14 @@
 <h1>予約確認</h1>
 
-<%= form_with model: @reservation, method: :post do |f| %>
-  <p>チェックイン</p>
-  <p><%= @reservation.check_in_date %></p>
-  <p>チェックアウト</p>
-  <p><%= @reservation.check_out_date %></p>
-  <p>人数</p>
-  <p><%= @reservation.number_of_person %></p>
+<p>チェックイン</p>
+<p><%= @reservation.check_in_date %></p>
+<p>チェックアウト</p>
+<p><%= @reservation.check_out_date %></p>
+<p>人数</p>
+<p><%= @reservation.number_of_person %></p>
+<%= form_with model: @reservation, method: :post, url: reservations_path do |f| %>
+  <%= f.hidden_field :check_in_date %>
+  <%= f.hidden_field :check_out_date %>
+  <%= f.hidden_field :number_of_person %>
+  <%= f.submit "予約を確定" %>
 <% end %>
