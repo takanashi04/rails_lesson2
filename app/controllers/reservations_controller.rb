@@ -12,11 +12,9 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
 
     if @reservation.save
-      binding.pry
       flash[:notice] = "予約が完了しました！"
       redirect_to reservations_path
     else
-      binding.pry
       render 'confirm'
     end
   end
@@ -45,11 +43,11 @@ class ReservationsController < ApplicationController
     # モデル名が違う場合のcreateアクションは動作しない
     # そのため、reservation_newもしくはconfirmで対応する
     def reservation_params
-      params.permit(
+      params.require(:reservation).permit(
         :check_in_date,
         :check_out_date,
         :number_of_person
       )
     end
-  
+
 end
