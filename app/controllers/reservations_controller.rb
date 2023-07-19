@@ -1,6 +1,7 @@
 class ReservationsController < ApplicationController
   def index
     @reservations = Reservation.all
+    @rooms = Room.all
   end
 
   def new
@@ -8,7 +9,6 @@ class ReservationsController < ApplicationController
   end
 
   def create
-      # binding.pry
     @reservation = Reservation.new(reservation_params)
 
     if @reservation.save
@@ -34,14 +34,13 @@ class ReservationsController < ApplicationController
 
   def confirm
     @reservation = Reservation.new(reservation_params)
+    @room = Room.find(params[:room_id])
+
     render 'confirm'
   end
 
   private
 
-    # require(:reservation)を削除
-    # モデル名が違う場合のcreateアクションは動作しない
-    # そのため、reservation_newもしくはconfirmで対応する
     def reservation_params
       params.require(:reservation).permit(
         :check_in_date,
