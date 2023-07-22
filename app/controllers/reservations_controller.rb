@@ -35,7 +35,7 @@ class ReservationsController < ApplicationController
 
   def confirm
     binding.pry
-    @room = Room.find(params[:room_id])
+    @room = Room.find(params[:reservation][:room_id])
     @reservation = Reservation.new(reservation_params)
 
     render 'confirm'
