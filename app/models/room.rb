@@ -6,6 +6,6 @@ class Room < ApplicationRecord
 
   mount_uploader :avatar_path, AvatarUploader
 
-  has_many :reservation
+  has_many :reservations
   belongs_to :user
 end

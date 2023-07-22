@@ -10,6 +10,7 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @room = Room.find(params[:id])
 
     if @reservation.save
       flash[:notice] = "予約が完了しました！"
@@ -33,8 +34,9 @@ class ReservationsController < ApplicationController
   end
 
   def confirm
-    @reservation = Reservation.new(reservation_params)
+    binding.pry
     @room = Room.find(params[:room_id])
+    @reservation = Reservation.new(reservation_params)
 
     render 'confirm'
   end

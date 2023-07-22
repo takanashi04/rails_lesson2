@@ -7,7 +7,6 @@
 <p>人数</p>
 <p><%= @reservation.number_of_person %></p>
 <p>お値段</p>
-<p><%= @room.price %></p>
 
 <%= form_with model: @reservation, method: :post, url: reservations_path do |f| %>
   <%= f.hidden_field :check_in_date %>

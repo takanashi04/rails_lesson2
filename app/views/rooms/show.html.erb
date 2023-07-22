@@ -23,6 +23,8 @@
 
   <p><%= f.submit "確認画面へ" %></p>
 
+  <%= f.hidden_field :room_id, value: @room.id %>
+
 <% end %>
 
 <%= link_to "旅館一覧へ", rooms_path %>
