@@ -1,7 +1,7 @@
 <h1>予約確認</h1>
 
 <p>施設名</p>
-<p><%= @reservation.room.name %></p>
+<p><%= @room.name %></p>
 <p>チェックイン</p>
 <p><%= @reservation.check_in_date %></p>
 <p>チェックアウト</p>
@@ -9,6 +9,7 @@
 <p>人数</p>
 <p><%= @reservation.number_of_person %></p>
 <p>お値段</p>
+<p><%= @room.price %></p>
 
 <%= form_with model: @reservation, method: :post, url: reservations_path do |f| %>
   <%= f.hidden_field :check_in_date %>
