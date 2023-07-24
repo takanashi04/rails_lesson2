@@ -37,8 +37,10 @@ class ReservationsController < ApplicationController
     binding.pry
     @room = Room.find(params[:reservation][:room_id])
     @reservation = Reservation.new(reservation_params)
+    if @reservation.invalid?
+      render 'confirm'
+    end
 
-    render 'confirm'
   end
 
   private
